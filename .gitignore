@@ -1,11 +1,6 @@
 # Dependencias
 node_modules/
 
-# Builds y compilados
-dist/
-build/
-out/
-*.tsbuildinfo
 
 # Variables de entorno
 .env

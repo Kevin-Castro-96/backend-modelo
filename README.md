@@ -96,7 +96,8 @@ src/
 ```json
 {
   "email": "usuario@test.com",
-  "password": "123456"
+  "password": "123456",
+  "name":"tu-nombre"
 }
 ```
 

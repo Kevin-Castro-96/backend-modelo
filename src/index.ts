@@ -5,7 +5,6 @@ import dotenv from "dotenv";
 import { AppDataSource } from "./config/data-source";
 import { register, login, me } from "./controllers/authController";
 import { authMiddleware } from "./middleware/auth";
-import { setupSwagger } from "./config/swagger"; // 👈
 
 
 dotenv.config();
@@ -16,12 +15,9 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-// Swagger
-setupSwagger(app);
-
 // Ruta raíz para evitar "Cannot GET /"
 app.get("/", (_req, res) => {
-  res.send("Bienvenido a la API 🚀 - Documentación en /api-docs");
+  res.send("Bienvenido a la API 🚀");
 });
 
 app.post("/auth/register", register);

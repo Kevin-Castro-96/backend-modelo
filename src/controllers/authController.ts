@@ -22,7 +22,7 @@ export const register = async (req: Request, res: Response) => {
     const token = jwt.sign({ id: user.id }, JWT_SECRET, { expiresIn: "7d" });
     return res.status(201).json({ token, user: { id: user.id, email: user.email, name: user.name } });
   } catch (err) {
-    return res.status(500).json({ message: "Error del servidor" });
+    return res.status(500).json({ message: "Error del servidor", err });
   }
 };
 

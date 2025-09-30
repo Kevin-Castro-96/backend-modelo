@@ -14,12 +14,13 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-app.use("/", (req, res) => {
-  res.send("🚀 Bienvenido a mi backend, la API está corriendo correctamente!");
-})
+
 app.post("/auth/register", register);
 app.post("/auth/login", login);
 app.get("/me", authMiddleware, me);
+app.use("/", (req, res) => {
+  res.send("🚀 Bienvenido a mi backend, la API está corriendo correctamente!");
+})
 
 AppDataSource.initialize()
   .then(() => {

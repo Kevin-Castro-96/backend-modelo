@@ -18,9 +18,7 @@ app.use(express.json());
 app.post("/auth/register", register);
 app.post("/auth/login", login);
 app.get("/me", authMiddleware, me);
-app.use("/", (req, res) => {
-  res.send("🚀 Bienvenido a mi backend, la API está corriendo correctamente!");
-})
+
 
 AppDataSource.initialize()
   .then(() => {
